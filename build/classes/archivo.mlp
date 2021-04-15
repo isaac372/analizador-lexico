@@ -1,0 +1,73 @@
+#Se inicializan variables
+set a 1
+set b 2
+set contador 0
+set c [expr $a + $b]
+
+#Ejemplo de if
+if {$a > 0} {
+	
+	#Ejemplo de for
+	for {set x 0} {$x < $c} {incr i} {
+		puts "El valor de x es $x"
+	}
+
+#ejecucion while
+while ($i) {
+   set contador [expr{$contador+1}]
+
+   if ($contador >= 1 && $contador <= 10) {
+   puts "El valor de tiempo 1 es $tiempo1"
+   set tiempo1 [expr {$tiempo1 + 1}]
+  }
+  if ($contador == 1) {
+    puts "posicion contador $contador"
+  }
+  if ($contador >= 10 && $contador <= 15) {
+    puts "El valor de tiempo 2 es $tiempo2"
+    set tiempo2 [expr {$tiempo2 + 1}]
+  }
+  if ($contador == 10) {
+     puts "posicion contador $contador"
+  }
+  if ($contador >= 15 && $contador <= 35) {
+    puts "El valor de tiempo 3 es $tiempo3"
+    set tiempo3 [expr {$tiempo3 + 1}]
+  }
+  if ($contador == 15) {
+    puts "posicion contador $contador"
+  }
+  if ($contador >= 35 && $contador <= 40) {
+    puts "El valor de tiempo 4 es $tiempo4"
+    set tiempo4 [expr {$tiempo4 + 1}]
+  }
+  if ($contador == 35) {
+    puts "posicion contador $contador"
+  }
+  if ($contador == 39) {
+    set tiempo1 0
+    set tiempo2 0
+    set tiempo3 0
+    set tiempo4 0
+    set i false
+  }
+}
+
+if(!$i){
+    switch x {
+		"1" {
+			puts "Uno"
+		}
+		"2" {
+			puts "Dos"
+		}
+		"3" {
+			puts "Tres"
+		}
+		default {
+			puts "El numero es mayor que tres"
+	        	}
+    }
+
+    }
+}

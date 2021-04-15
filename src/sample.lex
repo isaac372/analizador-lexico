@@ -113,6 +113,11 @@ COMMENT_TEXT=([^/*\n]|[^*\n]"/"[^*\n]|[^/\n]"*"[^/\n]|"*"[^/\n]|"/"[^*\n])*
 <YYINITIAL> "while" { return (new Yytoken(23,yytext(),yyline,yychar,yychar+1)); }
 <YYINITIAL> "set" { return (new Yytoken(24,yytext(),yyline,yychar,yychar+1)); }
 <YYINITIAL> "#" { return (new Yytoken(25,yytext(),yyline,yychar,yychar+1)); }
+<YYINITIAL> "if" { return (new Yytoken(26,yytext(),yyline,yychar,yychar+1)); }
+<YYINITIAL> "IF" { return (new Yytoken(27,yytext(),yyline,yychar,yychar+1)); }
+<YYINITIAL> "$" { return (new Yytoken(28,yytext(),yyline,yychar,yychar+1)); }
+<YYINITIAL> "puts" { return (new Yytoken(29,yytext(),yyline,yychar,yychar+1)); }
+
 
 <YYINITIAL> {NONNEWLINE_WHITE_SPACE_CHAR}+ { }
 
@@ -120,8 +125,9 @@ COMMENT_TEXT=([^/*\n]|[^*\n]"/"[^*\n]|[^/\n]"*"[^/\n]|"*"[^/\n]|"/"[^*\n])*
 
 <YYINITIAL> "/*" { yybegin(COMMENT); comment_count = comment_count + 1; }
 
+<COMMENT> "#" { comment_count = comment_count + 1; }
 <COMMENT> "/*" { comment_count = comment_count + 1; }
-<COMMENT> "*/" { 
+<COMMENT> "#" { 
 	comment_count = comment_count - 1; 
 	Utility.Analizador(comment_count >= 0);
 	if (comment_count == 0) {

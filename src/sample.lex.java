@@ -64,7 +64,7 @@ class Yytoken {
   public int m_charBegin;
   public int m_charEnd;
   public String toString() {
-      return "Token #"+m_index+": "+m_text+" (line "+m_line+")";
+      return "Token #"+m_index+": "+m_text+" (Linea "+m_line+")";
   }
 }
 
@@ -125,7 +125,7 @@ class Yylex {
 	private final int COMMENT = 1;
 	private final int yy_state_dtrans[] = {
 		0,
-		35
+		39
 	};
 	private void yybegin (int state) {
 		yy_lexical_state = state;
@@ -317,45 +317,59 @@ class Yylex {
 		/* 36 */ YY_NO_ANCHOR,
 		/* 37 */ YY_NO_ANCHOR,
 		/* 38 */ YY_NO_ANCHOR,
-		/* 39 */ YY_NOT_ACCEPT,
+		/* 39 */ YY_NO_ANCHOR,
 		/* 40 */ YY_NO_ANCHOR,
 		/* 41 */ YY_NO_ANCHOR,
 		/* 42 */ YY_NO_ANCHOR,
-		/* 43 */ YY_NO_ANCHOR,
+		/* 43 */ YY_NOT_ACCEPT,
 		/* 44 */ YY_NO_ANCHOR,
-		/* 45 */ YY_NOT_ACCEPT,
+		/* 45 */ YY_NO_ANCHOR,
 		/* 46 */ YY_NO_ANCHOR,
 		/* 47 */ YY_NO_ANCHOR,
 		/* 48 */ YY_NO_ANCHOR,
-		/* 49 */ YY_NO_ANCHOR,
-		/* 50 */ YY_NOT_ACCEPT,
+		/* 49 */ YY_NOT_ACCEPT,
+		/* 50 */ YY_NO_ANCHOR,
 		/* 51 */ YY_NO_ANCHOR,
 		/* 52 */ YY_NO_ANCHOR,
 		/* 53 */ YY_NO_ANCHOR,
-		/* 54 */ YY_NO_ANCHOR,
+		/* 54 */ YY_NOT_ACCEPT,
 		/* 55 */ YY_NO_ANCHOR,
-		/* 56 */ YY_NO_ANCHOR
+		/* 56 */ YY_NO_ANCHOR,
+		/* 57 */ YY_NO_ANCHOR,
+		/* 58 */ YY_NO_ANCHOR,
+		/* 59 */ YY_NO_ANCHOR,
+		/* 60 */ YY_NO_ANCHOR,
+		/* 61 */ YY_NO_ANCHOR,
+		/* 62 */ YY_NO_ANCHOR,
+		/* 63 */ YY_NO_ANCHOR,
+		/* 64 */ YY_NO_ANCHOR,
+		/* 65 */ YY_NO_ANCHOR
 	};
 	private int yy_cmap[] = unpackFromString(1,130,
-"36:8,28:2,29,36:2,30,36:18,28,36,31,27,36:2,18,36,4,5,13,11,1,12,10,14,33:1" +
-"0,2,3,16,15,17,36:2,34:26,6,32,7,36,35,36,34:4,24,34:2,21,22,34:2,23,34:6,2" +
-"5,26,34:2,20,34:3,8,19,9,36:2,0:2")[0];
+"42:8,34:2,35,42:2,36,42:18,34,42,37,27,31,42,18,42,4,5,13,11,1,12,10,14,39:" +
+"10,2,3,16,15,17,42:2,40:5,30,40:2,29,40:17,6,38,7,42,41,42,40:4,24,28,40,21" +
+",22,40:2,23,40:3,32,40:2,25,26,33,40,20,40:3,8,19,9,42:2,0:2")[0];
 
-	private int yy_rmap[] = unpackFromString(1,57,
-"0,1:2,2,1:11,3,1,4,5,1:2,6,1,7,8,1,9,1:6,10:2,11,1:3,12,13,14,15,8,16,17,18" +
-",19,20,21,22,23,24,25,26,10:2")[0];
+	private int yy_rmap[] = unpackFromString(1,66,
+"0,1:2,2,1:11,3,1,4,5,1:2,6,1:2,7,8,1,9,1:5,10:2,1,10:3,11,12,1:2,13,14,15,1" +
+"6,8,12,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,10:2")[0];
 
-	private int yy_nxt[][] = unpackFromString(27,37,
-"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,56:4,52,56,22,23:2,-1" +
-",24,25,26,56,25:2,-1:52,27,-1:34,28,-1:38,29,-1,30,-1:34,31,-1:41,56,54,56:" +
-"5,-1:6,55,56,55,-1:29,23:2,-1:8,24:28,-1,24,32,41,24:4,-1:33,26,-1:23,56:7," +
-"-1:6,55,56,55,-1,1,44:12,42,48,44:14,36,44:7,-1:28,39:2,-1:2,24,-1:24,56:6," +
-"33,-1:6,55,56,55,-1:2,24:27,47,39,24,43,41,24:4,-1,44:12,49,37,44:14,-1,44:" +
-"7,-1,44:12,45,50,44:14,-1,44:7,-1,44:12,49,-1,44:14,-1,44:7,-1:20,56:4,34,5" +
-"6:2,-1:6,55,56,55,-1:2,24:27,47,39,24,32,41,24:4,-1,44:12,38,51,44:14,-1,44" +
-":7,-1,44:12,49,50,44:14,-1,44:7,-1,44:12,-1,51,44:14,-1,44:7,-1,44:12,45,51" +
-",44:14,-1,44:7,-1:20,56:4,40,56:2,-1:6,55,56,55,-1:21,56:3,46,56:3,-1:6,55," +
-"56,55,-1:21,56:2,53,56:4,-1:6,55,56,55,-1");
+	private int yy_nxt[][] = unpackFromString(31,43,
+"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,65,44,65:2,59,65,22,6" +
+"5,50,65,23,62,65,24:2,-1,25,26,27,65,26:2,-1:58,28,-1:40,29,-1:44,30,-1,31," +
+"-1:40,32,-1:47,65,63,65:5,-1,65:3,-1,65:2,-1:5,64,65,64,-1:35,24:2,-1:8,25:" +
+"34,-1,25,35,45,25:4,-1:39,27,-1:23,65:7,-1,65:3,-1,65:2,-1:5,64,65,64,-1,1," +
+"48:12,46,52,48:12,40,48:7,41,48:7,-1,48:12,49,54,48:20,-1,48:7,-1:34,43:2,-" +
+"1:2,25,-1:24,65:7,-1,33,65:2,-1,65:2,-1:5,64,65,64,-1:2,25:33,51,43,25,47,4" +
+"5,25:4,-1,48:12,53,-1,48:20,-1,48:7,-1:20,65:7,-1,65:2,34,-1,65:2,-1:5,64,6" +
+"5,64,-1:2,25:33,51,43,25,35,45,25:4,-1,48:12,42,56,48:20,-1,48:7,-1,48:12,5" +
+"3,54,48:20,-1,48:7,-1,48:12,-1,56,48:20,-1,48:7,-1:20,65:6,36,-1,65:3,-1,65" +
+":2,-1:5,64,65,64,-1:2,48:12,49,56,48:20,-1,48:7,-1:20,65:5,37,65,-1,65:3,-1" +
+",65:2,-1:5,64,65,64,-1:21,65:4,38,65:2,-1,65:3,-1,65:2,-1:5,64,65,64,-1:21," +
+"65:4,55,65:2,-1,65:3,-1,65:2,-1:5,64,65,64,-1:21,65:6,57,-1,65:3,-1,65:2,-1" +
+":5,64,65,64,-1:21,65:3,58,65:3,-1,65:3,-1,65:2,-1:5,64,65,64,-1:21,65:7,-1," +
+"65:3,-1,65,60,-1:5,64,65,64,-1:21,65:2,61,65:4,-1,65:3,-1,65:2,-1:5,64,65,6" +
+"4,-1");
 
 	public Yytoken yylex ()
 		throws java.io.IOException {
@@ -492,169 +506,157 @@ class Yylex {
 					case -23:
 						break;
 					case 23:
-						{ }
+						{ return (new Yytoken(28,yytext(),yyline,yychar,yychar+1)); }
 					case -24:
 						break;
 					case 24:
-						{
-	String str =  yytext().substring(1,yytext().length());
-	Utility.error(Utility.E_UNCLOSEDSTR);
-	Utility.Analizador(str.length() == yytext().length() - 1);
-	return (new Yytoken(41,str,yyline,yychar,yychar + str.length()));
-}
+						{ }
 					case -25:
 						break;
 					case 25:
 						{
-        System.out.println("Illegal character: <" + yytext() + ">");
-	Utility.error(Utility.E_UNMATCHED);
+	String str =  yytext().substring(1,yytext().length());
+	Utility.error(Utility.E_UNCLOSEDSTR);
+	Utility.Analizador(str.length() == yytext().length() - 1);
+	return (new Yytoken(41,str,yyline,yychar,yychar + str.length()));
 }
 					case -26:
 						break;
 					case 26:
-						{ 
-	return (new Yytoken(42,yytext(),yyline,yychar,yychar + yytext().length()));
+						{
+        System.out.println("Illegal character: <" + yytext() + ">");
+	Utility.error(Utility.E_UNMATCHED);
 }
 					case -27:
 						break;
 					case 27:
-						{ return (new Yytoken(22,yytext(),yyline,yychar,yychar+2)); }
+						{ 
+	return (new Yytoken(42,yytext(),yyline,yychar,yychar + yytext().length()));
+}
 					case -28:
 						break;
 					case 28:
-						{ yybegin(COMMENT); comment_count = comment_count + 1; }
+						{ return (new Yytoken(22,yytext(),yyline,yychar,yychar+2)); }
 					case -29:
 						break;
 					case 29:
-						{ return (new Yytoken(17,yytext(),yyline,yychar,yychar+2)); }
+						{ yybegin(COMMENT); comment_count = comment_count + 1; }
 					case -30:
 						break;
 					case 30:
-						{ return (new Yytoken(15,yytext(),yyline,yychar,yychar+2)); }
+						{ return (new Yytoken(17,yytext(),yyline,yychar,yychar+2)); }
 					case -31:
 						break;
 					case 31:
-						{ return (new Yytoken(19,yytext(),yyline,yychar,yychar+2)); }
+						{ return (new Yytoken(15,yytext(),yyline,yychar,yychar+2)); }
 					case -32:
 						break;
 					case 32:
-						{
-	String str =  yytext().substring(1,yytext().length() - 1);
-	Utility.Analizador(str.length() == yytext().length() - 2);
-	return (new Yytoken(40,str,yyline,yychar,yychar + str.length()));
-}
+						{ return (new Yytoken(19,yytext(),yyline,yychar,yychar+2)); }
 					case -33:
 						break;
 					case 33:
-						{ return (new Yytoken(24,yytext(),yyline,yychar,yychar+1)); }
+						{ return (new Yytoken(26,yytext(),yyline,yychar,yychar+1)); }
 					case -34:
 						break;
 					case 34:
-						{ return (new Yytoken(23,yytext(),yyline,yychar,yychar+1)); }
+						{ return (new Yytoken(27,yytext(),yyline,yychar,yychar+1)); }
 					case -35:
 						break;
 					case 35:
-						{ }
-					case -36:
-						break;
-					case 36:
-						{ }
-					case -37:
-						break;
-					case 37:
-						{ 
-	comment_count = comment_count - 1; 
-	Utility.Analizador(comment_count >= 0);
-	if (comment_count == 0) {
-    		yybegin(YYINITIAL);
-	}
-}
-					case -38:
-						break;
-					case 38:
-						{ comment_count = comment_count + 1; }
-					case -39:
-						break;
-					case 40:
-						{
-	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
-}
-					case -40:
-						break;
-					case 41:
-						{
-	String str =  yytext().substring(1,yytext().length());
-	Utility.error(Utility.E_UNCLOSEDSTR);
-	Utility.Analizador(str.length() == yytext().length() - 1);
-	return (new Yytoken(41,str,yyline,yychar,yychar + str.length()));
-}
-					case -41:
-						break;
-					case 42:
-						{
-        System.out.println("Illegal character: <" + yytext() + ">");
-	Utility.error(Utility.E_UNMATCHED);
-}
-					case -42:
-						break;
-					case 43:
 						{
 	String str =  yytext().substring(1,yytext().length() - 1);
 	Utility.Analizador(str.length() == yytext().length() - 2);
 	return (new Yytoken(40,str,yyline,yychar,yychar + str.length()));
 }
+					case -36:
+						break;
+					case 36:
+						{ return (new Yytoken(24,yytext(),yyline,yychar,yychar+1)); }
+					case -37:
+						break;
+					case 37:
+						{ return (new Yytoken(29,yytext(),yyline,yychar,yychar+1)); }
+					case -38:
+						break;
+					case 38:
+						{ return (new Yytoken(23,yytext(),yyline,yychar,yychar+1)); }
+					case -39:
+						break;
+					case 39:
+						{ }
+					case -40:
+						break;
+					case 40:
+						{ comment_count = comment_count + 1; }
+					case -41:
+						break;
+					case 41:
+						{ }
+					case -42:
+						break;
+					case 42:
+						{ comment_count = comment_count + 1; }
 					case -43:
 						break;
 					case 44:
-						{ }
-					case -44:
-						break;
-					case 46:
 						{
 	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
 }
-					case -45:
+					case -44:
 						break;
-					case 47:
+					case 45:
 						{
 	String str =  yytext().substring(1,yytext().length());
 	Utility.error(Utility.E_UNCLOSEDSTR);
 	Utility.Analizador(str.length() == yytext().length() - 1);
 	return (new Yytoken(41,str,yyline,yychar,yychar + str.length()));
 }
-					case -46:
+					case -45:
 						break;
-					case 48:
+					case 46:
 						{
         System.out.println("Illegal character: <" + yytext() + ">");
 	Utility.error(Utility.E_UNMATCHED);
 }
+					case -46:
+						break;
+					case 47:
+						{
+	String str =  yytext().substring(1,yytext().length() - 1);
+	Utility.Analizador(str.length() == yytext().length() - 2);
+	return (new Yytoken(40,str,yyline,yychar,yychar + str.length()));
+}
 					case -47:
 						break;
-					case 49:
+					case 48:
 						{ }
 					case -48:
 						break;
-					case 51:
-						{ }
-					case -49:
-						break;
-					case 52:
+					case 50:
 						{
 	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -49:
+						break;
+					case 51:
+						{
+	String str =  yytext().substring(1,yytext().length());
+	Utility.error(Utility.E_UNCLOSEDSTR);
+	Utility.Analizador(str.length() == yytext().length() - 1);
+	return (new Yytoken(41,str,yyline,yychar,yychar + str.length()));
 }
 					case -50:
 						break;
-					case 53:
+					case 52:
 						{
-	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+        System.out.println("Illegal character: <" + yytext() + ">");
+	Utility.error(Utility.E_UNMATCHED);
 }
 					case -51:
 						break;
-					case 54:
-						{
-	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
-}
+					case 53:
+						{ }
 					case -52:
 						break;
 					case 55:
@@ -664,10 +666,62 @@ class Yylex {
 					case -53:
 						break;
 					case 56:
+						{ }
+					case -54:
+						break;
+					case 57:
 						{
 	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
 }
-					case -54:
+					case -55:
+						break;
+					case 58:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -56:
+						break;
+					case 59:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -57:
+						break;
+					case 60:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -58:
+						break;
+					case 61:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -59:
+						break;
+					case 62:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -60:
+						break;
+					case 63:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -61:
+						break;
+					case 64:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -62:
+						break;
+					case 65:
+						{
+	return (new Yytoken(43,yytext(),yyline,yychar,yychar + yytext().length()));
+}
+					case -63:
 						break;
 					default:
 						yy_error(YY_E_INTERNAL,false);
