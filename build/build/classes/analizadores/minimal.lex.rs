@@ -1,2 +1,0 @@
-analizadores.Yylex
-Example.Yylex
