@@ -61,7 +61,7 @@ class YylexLexico implements java_cup.runtime.Scanner {
 	private final int COMMENT = 1;
 	private final int yy_state_dtrans[] = {
 		0,
-		11
+		28
 	};
 	private void yybegin (int state) {
 		yy_lexical_state = state;
@@ -226,7 +226,7 @@ class YylexLexico implements java_cup.runtime.Scanner {
 		/* 9 */ YY_NO_ANCHOR,
 		/* 10 */ YY_NO_ANCHOR,
 		/* 11 */ YY_NO_ANCHOR,
-		/* 12 */ YY_NOT_ACCEPT,
+		/* 12 */ YY_NO_ANCHOR,
 		/* 13 */ YY_NO_ANCHOR,
 		/* 14 */ YY_NO_ANCHOR,
 		/* 15 */ YY_NO_ANCHOR,
@@ -237,25 +237,61 @@ class YylexLexico implements java_cup.runtime.Scanner {
 		/* 20 */ YY_NO_ANCHOR,
 		/* 21 */ YY_NO_ANCHOR,
 		/* 22 */ YY_NO_ANCHOR,
-		/* 23 */ YY_NOT_ACCEPT,
+		/* 23 */ YY_NO_ANCHOR,
 		/* 24 */ YY_NO_ANCHOR,
 		/* 25 */ YY_NO_ANCHOR,
 		/* 26 */ YY_NO_ANCHOR,
 		/* 27 */ YY_NO_ANCHOR,
-		/* 28 */ YY_NO_ANCHOR
+		/* 28 */ YY_NO_ANCHOR,
+		/* 29 */ YY_NOT_ACCEPT,
+		/* 30 */ YY_NO_ANCHOR,
+		/* 31 */ YY_NO_ANCHOR,
+		/* 32 */ YY_NO_ANCHOR,
+		/* 33 */ YY_NO_ANCHOR,
+		/* 34 */ YY_NO_ANCHOR,
+		/* 35 */ YY_NO_ANCHOR,
+		/* 36 */ YY_NO_ANCHOR,
+		/* 37 */ YY_NO_ANCHOR,
+		/* 38 */ YY_NO_ANCHOR,
+		/* 39 */ YY_NO_ANCHOR,
+		/* 40 */ YY_NO_ANCHOR,
+		/* 41 */ YY_NO_ANCHOR,
+		/* 42 */ YY_NO_ANCHOR,
+		/* 43 */ YY_NO_ANCHOR,
+		/* 44 */ YY_NO_ANCHOR,
+		/* 45 */ YY_NO_ANCHOR,
+		/* 46 */ YY_NO_ANCHOR,
+		/* 47 */ YY_NO_ANCHOR,
+		/* 48 */ YY_NO_ANCHOR,
+		/* 49 */ YY_NO_ANCHOR,
+		/* 50 */ YY_NO_ANCHOR,
+		/* 51 */ YY_NO_ANCHOR,
+		/* 52 */ YY_NO_ANCHOR,
+		/* 53 */ YY_NO_ANCHOR,
+		/* 54 */ YY_NO_ANCHOR,
+		/* 55 */ YY_NO_ANCHOR,
+		/* 56 */ YY_NO_ANCHOR,
+		/* 57 */ YY_NOT_ACCEPT,
+		/* 58 */ YY_NO_ANCHOR,
+		/* 59 */ YY_NO_ANCHOR,
+		/* 60 */ YY_NO_ANCHOR
 	};
 	private int yy_cmap[] = unpackFromString(1,130,
-"12:9,11,9,12,11:2,12:18,11,12:7,4,5,3,2,12:3,10,8:10,12,1,12:42,7,12:2,6,12" +
-":22,0:2")[0];
+"25:9,24,22,25,24:2,25:18,24,25:5,20,25,7,8,6,5,9,16,15,23,2:10,10,4,18,17,1" +
+"9,25:2,1:26,11,25,12,25,3,25,1:26,13,21,14,25:2,0:2")[0];
 
-	private int yy_rmap[] = unpackFromString(1,29,
-"0,1:6,2,3,1:2,4,5,6:2,5,6:2,1,7,6:3,8,9,10,6,11,8")[0];
+	private int yy_rmap[] = unpackFromString(1,61,
+"0,1,2,3,1:15,4,5,1:3,2,1:3,6,7,8,9,10:3,7,10:11,11,12,10:3,8,10:4,13:2,14,1" +
+"5")[0];
 
-	private int yy_nxt[][] = unpackFromString(12,13,
-"1,2,3,4,5,6,7,18,8,9,18,9,18,-1:20,10,-1:13,8,-1:4,1,13,14,15,16,17,24,26,1" +
-"9,9,28,20,26,-1,22:2,25,22:5,-1:2,22:2,-1,22:2,12,22:5,-1,23,22:2,-1,22:2,1" +
-"2,22:4,19,-1,23,22:2,-1,22:2,-1,22:5,-1,27,22:2,-1,22:2,12,22:3,21,22,-1,23" +
-",22:2,-1,22:2,25,22:5,-1,23,22:2,-1,22:2,12,22:5,-1,27,22:2");
+	private int yy_nxt[][] = unpackFromString(16,26,
+"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,4,23,4,-1:27,24" +
+":3,-1:24,3,-1:40,25,-1,26,-1:23,27,-1:8,1,30,31,32,33,34,35,36,37,38,39,40," +
+"41,42,43,44,45,46,47,48,49,50,23,58,51,32,-1,56:5,59,56:15,-1:2,56:2,-1,52:" +
+"3,56:2,29,56:15,-1,57,56:2,-1,56,31,56:3,29,56:15,-1,57,56:2,-1,56:5,29,56:" +
+"15,-1,57,56:2,-1,56:5,29,56:10,53,56,54,56:2,-1,57,56:2,-1,56:5,29,56:10,55" +
+",56:4,-1,57,56:2,-1,56:5,-1,56:15,-1,60,56:2,-1,56:5,59,56:15,-1,57,56:2,-1" +
+",56:5,29,56:15,-1,60,56:2");
 
 	public java_cup.runtime.Symbol next_token ()
 		throws java.io.IOException {
@@ -306,104 +342,240 @@ class YylexLexico implements java_cup.runtime.Scanner {
 					case -2:
 						break;
 					case 2:
-						{ return new Symbol(sym.SEMI); }
+						{
+	return (new Symbol(sym.CADENATEXTO,new String(yytext())));
+}
 					case -3:
 						break;
 					case 3:
-						{ return new Symbol(sym.PLUS); }
+						{ return new Symbol(sym.NUMBER, new Integer(yytext())); }
 					case -4:
 						break;
 					case 4:
-						{ return new Symbol(sym.TIMES); }
+						{ System.err.println("Illegal character: "+yytext()); }
 					case -5:
 						break;
 					case 5:
-						{ return new Symbol(sym.LPAREN); }
+						{ return new Symbol(sym.PTOCOMA); }
 					case -6:
 						break;
 					case 6:
-						{ return new Symbol(sym.RPAREN); }
+						{ return new Symbol(sym.SUMA); }
 					case -7:
 						break;
 					case 7:
-						{ System.err.println("Illegal character: "+yytext()); }
+						{ return new Symbol(sym.TIMES); }
 					case -8:
 						break;
 					case 8:
-						{ return new Symbol(sym.NUMBER, new Integer(yytext())); }
+						{ return new Symbol(sym.LPAREN); }
 					case -9:
 						break;
 					case 9:
-						{ /* ignore white space. */ }
+						{ return new Symbol(sym.RPAREN); }
 					case -10:
 						break;
 					case 10:
-						{ return new Symbol(sym.IF, yyline,yychar, yytext());}
+						{ return new Symbol(sym.COMA); }
 					case -11:
 						break;
 					case 11:
-						{ }
+						{ return new Symbol(sym.DOSPTO); }
 					case -12:
 						break;
-					case 13:
-						{ return new Symbol(sym.SEMI); }
+					case 12:
+						{ return new Symbol(sym.ABRECORCHETE); }
 					case -13:
 						break;
-					case 14:
-						{ return new Symbol(sym.PLUS); }
+					case 13:
+						{ return new Symbol(sym.CIERRACORCHETE); }
 					case -14:
 						break;
-					case 15:
-						{ return new Symbol(sym.TIMES); }
+					case 14:
+						{ return new Symbol(sym.INICIOLLAVE); }
 					case -15:
 						break;
-					case 16:
-						{ return new Symbol(sym.LPAREN); }
+					case 15:
+						{ return new Symbol(sym.FINLLAVE); }
 					case -16:
 						break;
-					case 17:
-						{ return new Symbol(sym.RPAREN); }
+					case 16:
+						{ return new Symbol(sym.PTO); }
 					case -17:
 						break;
-					case 18:
-						{ System.err.println("Illegal character: "+yytext()); }
+					case 17:
+						{ return new Symbol(sym.RESTA); }
 					case -18:
 						break;
-					case 19:
-						{ return new Symbol(sym.NUMBER, new Integer(yytext())); }
+					case 18:
+						{ return new Symbol(sym.IGUAL); }
 					case -19:
 						break;
-					case 20:
-						{ /* ignore white space. */ }
+					case 19:
+						{ return new Symbol(sym.MENOR); }
 					case -20:
 						break;
-					case 21:
-						{ return new Symbol(sym.IF, yyline,yychar, yytext());}
+					case 20:
+						{ return new Symbol(sym.MAYOR); }
 					case -21:
 						break;
-					case 22:
-						{ }
+					case 21:
+						{ return new Symbol(sym.AND); }
 					case -22:
 						break;
-					case 24:
-						{ System.err.println("Illegal character: "+yytext()); }
+					case 22:
+						{ return new Symbol(sym.OR); }
 					case -23:
 						break;
-					case 25:
-						{ }
+					case 23:
+						{ /* ignore white space. */ }
 					case -24:
 						break;
-					case 26:
-						{ System.err.println("Illegal character: "+yytext()); }
+					case 24:
+						{
+	return (new Symbol(sym.IDENTIFICADOR,new String(yytext())));
+}
 					case -25:
 						break;
-					case 27:
-						{ }
+					case 25:
+						{ return new Symbol(sym.MENORIGUAL); }
 					case -26:
 						break;
-					case 28:
-						{ System.err.println("Illegal character: "+yytext()); }
+					case 26:
+						{ return new Symbol(sym.DISTINTO); }
 					case -27:
+						break;
+					case 27:
+						{ return new Symbol(sym.MAYORIGUAL); }
+					case -28:
+						break;
+					case 28:
+						{ }
+					case -29:
+						break;
+					case 30:
+						{
+	return (new Symbol(sym.CADENATEXTO,new String(yytext())));
+}
+					case -30:
+						break;
+					case 31:
+						{ return new Symbol(sym.NUMBER, new Integer(yytext())); }
+					case -31:
+						break;
+					case 32:
+						{ System.err.println("Illegal character: "+yytext()); }
+					case -32:
+						break;
+					case 33:
+						{ return new Symbol(sym.PTOCOMA); }
+					case -33:
+						break;
+					case 34:
+						{ return new Symbol(sym.SUMA); }
+					case -34:
+						break;
+					case 35:
+						{ return new Symbol(sym.TIMES); }
+					case -35:
+						break;
+					case 36:
+						{ return new Symbol(sym.LPAREN); }
+					case -36:
+						break;
+					case 37:
+						{ return new Symbol(sym.RPAREN); }
+					case -37:
+						break;
+					case 38:
+						{ return new Symbol(sym.COMA); }
+					case -38:
+						break;
+					case 39:
+						{ return new Symbol(sym.DOSPTO); }
+					case -39:
+						break;
+					case 40:
+						{ return new Symbol(sym.ABRECORCHETE); }
+					case -40:
+						break;
+					case 41:
+						{ return new Symbol(sym.CIERRACORCHETE); }
+					case -41:
+						break;
+					case 42:
+						{ return new Symbol(sym.INICIOLLAVE); }
+					case -42:
+						break;
+					case 43:
+						{ return new Symbol(sym.FINLLAVE); }
+					case -43:
+						break;
+					case 44:
+						{ return new Symbol(sym.PTO); }
+					case -44:
+						break;
+					case 45:
+						{ return new Symbol(sym.RESTA); }
+					case -45:
+						break;
+					case 46:
+						{ return new Symbol(sym.IGUAL); }
+					case -46:
+						break;
+					case 47:
+						{ return new Symbol(sym.MENOR); }
+					case -47:
+						break;
+					case 48:
+						{ return new Symbol(sym.MAYOR); }
+					case -48:
+						break;
+					case 49:
+						{ return new Symbol(sym.AND); }
+					case -49:
+						break;
+					case 50:
+						{ return new Symbol(sym.OR); }
+					case -50:
+						break;
+					case 51:
+						{ /* ignore white space. */ }
+					case -51:
+						break;
+					case 52:
+						{
+	return (new Symbol(sym.IDENTIFICADOR,new String(yytext())));
+}
+					case -52:
+						break;
+					case 53:
+						{ return new Symbol(sym.MENORIGUAL); }
+					case -53:
+						break;
+					case 54:
+						{ return new Symbol(sym.DISTINTO); }
+					case -54:
+						break;
+					case 55:
+						{ return new Symbol(sym.MAYORIGUAL); }
+					case -55:
+						break;
+					case 56:
+						{ }
+					case -56:
+						break;
+					case 58:
+						{ System.err.println("Illegal character: "+yytext()); }
+					case -57:
+						break;
+					case 59:
+						{ }
+					case -58:
+						break;
+					case 60:
+						{ }
+					case -59:
 						break;
 					default:
 						yy_error(YY_E_INTERNAL,false);

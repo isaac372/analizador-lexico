@@ -8,27 +8,62 @@ parser code {:
 	}
 :}
 
-terminal SEMI, PLUS, TIMES, LPAREN, RPAREN;
-terminal String SET,WHILE,IF,ELSE;
+
+terminal CADENATEXTO ,IDENTIFICADOR,ASIGNAR,IGUAL,DISTINTO,MENOR,MENORIGUAL,MAYOR,MAYORIGUAL,OR,AND,SUMA,RESTA,TIMES,ENTERO,SEMI,PLUS;
+terminal LPAREN,RPAREN,PTOCOMA,PTO,DOSPTO,ABRECORCHETE,CIERRACORCHETE,COMA,INICIOLLAVE,FINLLAVE,IF,ELSE,WHILE,BREAK,PUTS,SET,SWITCH,FOR;
 terminal Integer NUMBER;
-terminal String LETRAS;
 
-non terminal expr_list, expr_part;
-non terminal Integer expr;
+non terminal Programa, Declaraciones , Cuerpo,Declaracion,BloqueSentencias,Sentencia,Sentencias,Expresion,Condicion;
+non terminal SentenciaIf,SentenciaElse,SentenciaWhile,SentenciaAsignacion,SentenciaPuts,SentenciaBreak,SentenciaSwitch;
 
 
-precedence left PLUS;
-precedence left TIMES;
+precedence left SUMA,RESTA;
+precedence left AND,OR;
+start with Programa;
 
-expr_list ::= expr_list expr_part | expr_part;
-expr_part ::= expr:e {: System.out.println(" = "+e+";"); :} SEMI;
-expr      ::= NUMBER:n
-	      {: RESULT=n; :}
-         | expr:l PLUS expr:r
-	      {: RESULT=new Integer(l.intValue() + r.intValue()); :}
-	    | expr:l TIMES expr:r
-	      {: RESULT=new Integer(l.intValue() * r.intValue()); :}
-	    | LPAREN expr:e RPAREN
-	      {: RESULT=e; :}
-		  | SET:miterminal    {: return =miterminal; :}
-	    ;
+Programa ::= Declaraciones Cuerpo | Cuerpo;
+
+Declaraciones ::= Declaracion Declaraciones | Declaracion;
+
+Declaracion ::= SET IDENTIFICADOR IDENTIFICADOR PTOCOMA;
+
+Cuerpo ::= BloqueSentencias ;
+
+BloqueSentencias ::= Sentencias|;
+
+Sentencias ::= Sentencia Sentencias|Sentencia;
+
+Expresion ::= Expresion SUMA Expresion |
+             Expresion RESTA Expresion|
+             ENTERO | IDENTIFICADOR | LPAREN Expresion RPAREN;
+
+Condicion ::= Condicion OR Condicion |
+            Condicion AND Condicion |
+            Expresion IGUAL Expresion |
+            Expresion DISTINTO Expresion |
+            Expresion MENOR Expresion |
+            Expresion MAYOR Expresion | 
+            LPAREN Condicion RPAREN;
+
+SentenciaIf ::= IF INICIOLLAVE Condicion FINLLAVE 
+INICIOLLAVE BloqueSentencias FINLLAVE SentenciaElse;
+
+SentenciaElse ::= ELSE INICIOLLAVE BloqueSentencias FINLLAVE|;
+
+SentenciaWhile ::= WHILE INICIOLLAVE Condicion FINLLAVE
+                    INICIOLLAVE BloqueSentencias FINLLAVE;
+
+SentenciaAsignacion ::= IDENTIFICADOR ASIGNAR Expresion PTOCOMA;
+
+SentenciaPuts ::= PUTS CADENATEXTO PTOCOMA;
+
+SentenciaBreak ::= BREAK PTOCOMA;
+
+SentenciaSwitch ::= SWITCH Condicion INICIOLLAVE BloqueSentencias FINLLAVE;
+
+Sentencia ::= SentenciaIf
+             | SentenciaWhile
+             | SentenciaAsignacion
+             | SentenciaPuts
+             | SentenciaSwitch
+             | SentenciaBreak;
